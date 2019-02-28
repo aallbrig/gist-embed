@@ -31,6 +31,7 @@ See http://blairvanderhoof.com/gist-embed/ for all possible ways to use gist-emb
 * Removing all line numbers from a gist
 * Removing the footer from a gist
 * Highlight lines from a gist
+* Specify base URL so you can reference internal self-hosted gists
 
 #### FAQ
 #### How do I configure line numbers?

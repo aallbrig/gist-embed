@@ -36,6 +36,7 @@
       var $elem = $(this),
         id,
         url,
+        urlBase,
         file,
         caption,
         lines,
@@ -53,6 +54,7 @@
       $elem.css('display', 'block');
 
       id = $elem.data('gist-id') || '';
+      urlBase = $elem.data('gist-url-base') || 'https://gist.github.com';
       file = $elem.data('gist-file');
       caption = $elem.data('gist-caption');
       hideFooterOption = $elem.data('gist-hide-footer') === true;
@@ -77,7 +79,7 @@
         return false;
       }
 
-      url = 'https://gist.github.com/' + id + '.json';
+      url = urlBase + '/' + id + '.json';
       enableCache = $elem.data('gist-enable-cache') === true || gistCache[url];
       loading = 'Loading gist ' + url + (data.file ? ', file: ' + data.file : '') + '...';
 
@@ -114,7 +116,7 @@
               if (response.stylesheet.indexOf('/') !== 0) {
                 response.stylesheet = '/' + response.stylesheet;
               }
-              response.stylesheet = 'https://gist.github.com' + response.stylesheet;
+              response.stylesheet = urlBase + response.stylesheet;
             }
           }
 
